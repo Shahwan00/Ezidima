@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق تعلم اللغة الإيزيدية - Ezidi Learning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f7f7;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #58cc02; /* لون أخضر دولينجو */
+            color: white;
+            font-weight: bold;
+        }
+        .btn:hover { background-color: #46a302; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>مرحباً بك! اختر لغتك الأم للبدء</h2>
+    <h3>Welcome! Choose your native language</h3>
+    <h3>Willkommen! Wählen Sie Ihre Muttersprache</h3>
+    
+    <button class="btn" onclick="startApp('ar')">العربية</button>
+    <button class="btn" onclick="startApp('en')">English</button>
+    <button class="btn" onclick="startApp('de')">Deutsch</button>
+</div>
+
+<script>
+    function startApp(lang) {
+        // حفظ اللغة المختار في ذاكرة المتصفح
+        localStorage.setItem('userLanguage', lang);
+        // الانتقال إلى صفحة التطبيق والأسئلة
+        window.location.href = 'app.html';
+    }
+</script>
+
+</body>
+</html>
