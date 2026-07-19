@@ -1,1 +1,237 @@
+/* الألوان الأساسية ونظام الخطوط */
+:root {
+    --primary-color: #58cc02;
+    --primary-dark: #46a302;
+    --text-color: #3c3c3c;
+    --border-color: #e5e5e5;
+    --error-color: #ea2b2b;
+    --correct-bg: #d7ffb8;
+    --correct-text: #58a700;
+    --error-bg: #ffdfe0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--text-color);
+    background-color: #ffffff;
+    display: block;
+}
+
+/* شاشة الترحيب */
+.welcome-body {
+    background-color: #f7f7f7;
+    padding: 40px 20px;
+}
+.welcome-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.app-logo {
+    font-size: 64px;
+    margin-bottom: 10px;
+}
+.subtitle {
+    color: #afafaf;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+.lang-selector-box h2 {
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+.en-text, .de-text {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 4px;
+}
+.btn-lang {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    background: white;
+    border: 2px solid var(--border-color);
+    border-bottom: 4px solid var(--border-color);
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.1s ease;
+}
+.btn-lang:active {
+    border-bottom-width: 2px;
+    transform: translateY(2px);
+}
+.btn-lang:hover {
+    background-color: #f1f1f1;
+}
+.flag {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* واجهة اللعب العليا */
+.top-bar {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 20px 10px 20px;
+    display: table;
+    width: 100%;
+}
+.close-btn {
+    display: table-cell;
+    width: 40px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #afafaf;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.progress-container {
+    display: table-cell;
+    background: var(--border-color);
+    border-radius: 10px;
+    height: 16px;
+    width: 80%;
+    vertical-align: middle;
+    position: relative;
+}
+.progress-bar {
+    background: var(--primary-color);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+.hearts-container {
+    display: table-cell;
+    width: 60px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--error-color);
+    vertical-align: middle;
+}
+
+/* منطقة الأسئلة */
+.game-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+.question-section h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+.options-grid {
+    display: block;
+}
+.option-btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    margin: 12px 0;
+    font-size: 18px;
+    font-weight: 500;
+    background: white;
+    border: 2px solid var(--border-color);
+    border-bottom: 5px solid var(--border-color);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    text-align: center;
+}
+.option-btn:hover {
+    background-color: #f7f7f7;
+}
+.option-btn.selected {
+    background-color: #ddf4ff;
+    border-color: #84d8ff;
+    border-bottom-width: 5px;
+    color: #1899d6;
+}
+
+/* شريط التغذية الراجعة السفلي */
+.footer-check {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-top: 2px solid var(--border-color);
+    padding: 24px 20px;
+}
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: table;
+    width: 100%;
+}
+.feedback-message {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+.btn-action {
+    display: table-cell;
+    width: 140px;
+    padding: 14px 24px;
+    background-color: var(--primary-color);
+    border: none;
+    border-bottom: 4px solid var(--primary-dark);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+}
+.btn-action:disabled {
+    background-color: #e5e5e5;
+    border-bottom-color: #cccccc;
+    color: #afafaf;
+    cursor: not-allowed;
+}
+
+/* حالات النجاح والفشل للشريط السفلي */
+.footer-check.correct {
+    background-color: var(--correct-bg);
+    border-top-color: transparent;
+}
+.footer-check.correct .feedback-message {
+    color: var(--correct-text);
+}
+.footer-check.correct .btn-action {
+    background-color: var(--primary-color);
+    border-bottom-color: var(--primary-dark);
+}
+
+.footer-check.wrong {
+    background-color: var(--error-bg);
+    border-top-color: transparent;
+}
+.footer-check.wrong .feedback-message {
+    color: var(--error-color);
+}
+.footer-check.wrong .btn-action {
+    background-color: var(--error-color);
+    border-bottom-color: #b81d1d;
+}
 
