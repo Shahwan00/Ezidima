@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezidi Learning - Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- الشريط العلوي (شريط التقدم والقلوب وزر الإغلاق) -->
+    <div class="top-bar">
+        <button class="close-btn" onclick="window.location.href='index.html'">✕</button>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+        </div>
+        <div class="hearts-container">
+            <span class="heart-icon">❤️</span>
+            <span id="heartsCount" class="heart-text">5</span>
+        </div>
+    </div>
+
+    <!-- منطقة عرض السؤال والخيارات -->
+    <div class="game-container">
+        <div class="question-section">
+            <h2 id="questionText">جاري تحميل السؤال...</h2>
+        </div>
+
+        <div class="options-grid" id="optionsGrid">
+            <!-- الأزرار ستظهر هنا ديناميكياً بواسطة JavaScript -->
+        </div>
+    </div>
+
+    <!-- شريط التحقق السفلي (يتغير لونه للأخضر أو الأحمر عند التحقق) -->
+    <div class="footer-check" id="footerCheck">
+        <div class="footer-content">
+            <div class="feedback-message" id="feedbackMessage"></div>
+            <button class="btn-action" id="actionBtn" onclick="handleActionClick()">تحقق (Check)</button>
+        </div>
+    </div>
+
+    <!-- استدعاء ملف البيانات وملف التحكم -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
 
